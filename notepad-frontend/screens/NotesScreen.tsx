@@ -76,13 +76,13 @@ const NotesScreen: React.FC<NotesScreenProps> = ({
             <View style={styles.noteActions}>
               <IconButton
                 icon="pencil"
-                size={18}
+                size={20}
                 onPress={() => handleEdit(item)}
                 style={styles.editButton}
               />
               <IconButton
                 icon="delete"
-                size={18}
+                size={20}
                 onPress={() => handleDelete(item.id, item.title)}
                 style={styles.deleteButton}
               />
@@ -98,11 +98,11 @@ const NotesScreen: React.FC<NotesScreenProps> = ({
       <View style={styles.header}>
         <IconButton
           icon="arrow-left"
-          size={24}
+          size={25}
           onPress={onNavigateToHome}
         />
         <Text variant="titleLarge" style={styles.title}>
-          My Notes ({notes.length})
+          Mes notes ({notes.length})
         </Text>
         <IconButton
           icon="plus"
@@ -113,7 +113,7 @@ const NotesScreen: React.FC<NotesScreenProps> = ({
       {/* Barre de recherche */}
       <View style={styles.searchContainer}>
         <TextInput
-          placeholder="Search notes..."
+          placeholder="Recherches de notes..."
           value={searchQuery}
           onChangeText={setSearchQuery}
           style={styles.searchInput}
@@ -134,12 +134,12 @@ const NotesScreen: React.FC<NotesScreenProps> = ({
       {filteredNotes.length === 0 ? (
         <View style={styles.emptyState}>
           <Text variant="titleMedium" style={styles.emptyText}>
-            {searchQuery ? 'No notes found' : 'No notes yet'}
+            {searchQuery ? 'No notes found' : 'Aucune note'}
           </Text>
           <Text variant="bodyMedium" style={styles.emptySubtext}>
             {searchQuery 
               ? 'Try a different search term'
-              : 'Tap the + button to create your first note'
+              : 'Tapez sur le button  +  pour creer ta premiere note'
             }
           </Text>
         </View>
@@ -152,14 +152,14 @@ const NotesScreen: React.FC<NotesScreenProps> = ({
         />
       )}
 
-      <Button 
-        mode="contained" 
-        onPress={onNavigateToAddNote}
-        style={styles.fab}
-        icon="plus"
-      >
-        Add Note
-      </Button>
+  <Button 
+    mode="contained" 
+    onPress={onNavigateToAddNote}
+    style={styles.fab}
+    icon="plus"
+  >
+    <Text>Ajout de Note</Text>
+  </Button>
     </View>
   );
 };
@@ -167,7 +167,7 @@ const NotesScreen: React.FC<NotesScreenProps> = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e6f2ff',
+    backgroundColor: '#000000ff',
   },
   header: {
     flexDirection: 'row',
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   title: {
-    color: '#18191aff',
+    color: '#1e5286ff',
     fontWeight: 'bold',
   },
   listContent: {
@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#fff',
   },
   emptyText: {
     color: '#2b4055ff',
@@ -210,7 +211,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     backgroundColor: '#fff',
     borderWidth: 1,
-    borderColor: '#4e2828ff',
+    borderColor: '#ffffffff',
   },
   noteTitle: {
     color: '#000000ff', // Noir pour le titre
@@ -245,7 +246,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 24,
     right: 24,
-    backgroundColor: '#3179c2ff',
+    backgroundColor: '#8b62d3ff',
   },
   searchInput: {
     backgroundColor: '#ffffffff',

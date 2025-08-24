@@ -38,30 +38,30 @@ const EditNoteScreen: React.FC<EditNoteScreenProps> = ({
           onPress={onNavigateBack}
         />
         <Text variant="titleLarge" style={styles.title}>
-          Edit Note
+          Modifier
         </Text>
         <View style={{ width: 48 }} /> {/* Spacer for alignment */}
       </View>
 
       <ScrollView style={styles.content}>
         <TextInput
-          label="Title (optional)"
+          label="Titre (optionel)"
           value={title}
           onChangeText={setTitle}
           style={styles.titleInput}
           mode="outlined"
-          placeholder="Enter note title..."
+          placeholder="Entrez le titre..."
         />
         
         <TextInput
-          label="Content"
+          label="Contenu"
           value={content}
           onChangeText={setContent}
           style={styles.contentInput}
           mode="outlined"
           multiline
           numberOfLines={10}
-          placeholder="Write your note here..."
+          placeholder="Ecrivez vos notes ici..."
           textAlignVertical="top"
         />
 
@@ -71,7 +71,7 @@ const EditNoteScreen: React.FC<EditNoteScreenProps> = ({
             onPress={onNavigateBack}
             style={styles.cancelButton}
           >
-            Cancel
+           <Text> Annuler</Text>
           </Button>
           <Button 
             mode="contained" 
@@ -80,7 +80,7 @@ const EditNoteScreen: React.FC<EditNoteScreenProps> = ({
             disabled={!content.trim()}
             icon="content-save"
           >
-            Update Note
+            <Text>Mise a jour</Text>
           </Button>
         </View>
       </ScrollView>
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     padding: 16,
+    backgroundColor:'#fff',
   },
   titleInput: {
     marginBottom: 16,

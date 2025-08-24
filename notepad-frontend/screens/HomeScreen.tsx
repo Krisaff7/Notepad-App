@@ -12,17 +12,18 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigateToNotes }) => {
 
   useEffect(() => {
     navigation.setOptions({
-      title: 'Notepad App',
-      headerShown: true,
-      headerStyle: {
-        backgroundColor: '#ffffff',
-      },
-      headerTintColor: '#000000',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-        fontSize: 20,
-      },
-    });
+    title: 'Notepad App',
+    headerShown: true,
+    headerStyle: {
+      backgroundColor: '#8b62d3ff',
+    },
+    headerTintColor: '#000000',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 20,
+    },
+    derTitleAlign: 'center', // Utilisez cette propriété pour centrer le titre
+  });
   }, [navigation]);
 
   return (
@@ -34,10 +35,10 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigateToNotes }) => {
         resizeMode="contain"
       />
       <Text variant="headlineMedium" style={styles.title}>
-        📝 Welcome to Notepad
+        Bienvenue sur Notepad
       </Text>
       <Text variant="bodyMedium" style={styles.subtitle}>
-        Capture your thoughts anytime, anywhere
+        Capturez vos idees partout et tout le temps.
       </Text>
       <Button 
         mode="contained" 
@@ -46,7 +47,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigateToNotes }) => {
         icon="note-plus"
         contentStyle={styles.buttonContent}
       >
-        Get Started
+        <Text>Allons-y</Text>
       </Button>
     </View>
   );
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#e6f2ff', // Fond bleu clair
+    backgroundColor: '#ffffffff', // Fond bleu clair
   },
   image: {
     width: 120,
@@ -78,9 +79,10 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     lineHeight: 24,
     opacity: 0.8,
+    fontSize: 20,
   },
   button: {
-    backgroundColor: '#1976d2',
+    backgroundColor: '#8b62d3ff',
     borderRadius: 8,
   },
   buttonContent: {

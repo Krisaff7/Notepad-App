@@ -26,28 +26,28 @@ const AddNoteScreen: React.FC<AddNoteScreenProps> = ({
       <View style={styles.header}>
         <IconButton
           icon="arrow-left"
-          size={24}
+          size={25}
           onPress={onNavigateBack}
         />
         <Text variant="titleLarge" style={styles.title}>
-          New Note
+          Nouveau Note
         </Text>
         <View style={{ width: 48 }} /> {/* Spacer for alignment */}
       </View>
 
       <ScrollView style={styles.content}>
         <TextInput
-          label="Title (optional)"
+          label="Titre (optionel)"
           value={title}
           onChangeText={setTitle}
           style={styles.titleInput}
           mode="outlined"
           textColor="#000000"
-          placeholder="Enter note title..."
+          placeholder="Entrez le titre..."
         />
         
         <TextInput
-          label="Content"
+          label="Contenu"
           value={content}
           onChangeText={setContent}
           style={styles.contentInput}
@@ -55,7 +55,7 @@ const AddNoteScreen: React.FC<AddNoteScreenProps> = ({
           textColor="#000000"
           multiline
           numberOfLines={10}
-          placeholder="Write your note here..."
+          placeholder="Ecrivez vos notes ici..."
           textAlignVertical="top"
         />
 
@@ -66,7 +66,7 @@ const AddNoteScreen: React.FC<AddNoteScreenProps> = ({
           disabled={!content.trim()}
           icon="content-save"
         >
-          Save Note
+          <Text>Sauvegarder</Text>
         </Button>
       </ScrollView>
     </View>
@@ -87,12 +87,13 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   title: {
-    color: '#1976d2',
+    color: '#2374c4ff',
     fontWeight: 'bold',
   },
   content: {
     flex: 1,
     padding: 16,
+    backgroundColor: '#fff'
   },
   titleInput: {
     marginBottom: 16,
@@ -104,8 +105,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffffff',
   },
   saveButton: {
-    backgroundColor: '#1976d2',
-    paddingVertical: 6,
+    backgroundColor: '#8b62d3ff',
+    paddingVertical: 7,
   },
 });
 

@@ -167,7 +167,7 @@ const NotesScreen: React.FC<NotesScreenProps> = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000ff',
+    backgroundColor: '#ffffffff',
   },
   header: {
     flexDirection: 'row',

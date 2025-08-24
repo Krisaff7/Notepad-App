@@ -32,7 +32,7 @@ const AddNoteScreen: React.FC<AddNoteScreenProps> = ({
         <Text variant="titleLarge" style={styles.title}>
           Nouveau Note
         </Text>
-        <View style={{ width: 48 }} /> {/* Spacer for alignment */}
+        <View style={{ width: 48 }} />
       </View>
 
       <ScrollView style={styles.content}>

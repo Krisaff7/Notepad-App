@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Text, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface HomeScreenProps {
   onNavigateToNotes: () => void;
@@ -12,42 +13,43 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigateToNotes }) => {
 
   useEffect(() => {
     navigation.setOptions({
-    title: 'Notepad App',
-    headerShown: true,
-    headerStyle: {
-      backgroundColor: '#8b62d3ff',
-    },
-    headerTintColor: '#000000',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      fontSize: 20,
-    },
-    derTitleAlign: 'center', // Utilisez cette propriété pour centrer le titre
-  });
+      title: 'Notepad App',
+      headerShown: true,
+      headerStyle: {
+        backgroundColor: '#8b62d3',
+      },
+      headerTintColor: '#ffffff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontSize: 20,
+      },
+      headerTitleAlign: 'center',
+    });
   }, [navigation]);
 
   return (
     <View style={styles.container}>
-      {/* Image avec fond transparent */}
-      <Image 
-        source={require('@/assets/images/th.png')} 
-        style={styles.image}
-        resizeMode="contain"
+      {/* Icône vectorielle à la place de l'image problématique */}
+      <Icon 
+        name="notebook" 
+        size={100} 
+        color="#8b62d3" 
+        style={styles.icon}
       />
+      
       <Text variant="headlineMedium" style={styles.title}>
         Bienvenue sur Notepad
       </Text>
       <Text variant="bodyMedium" style={styles.subtitle}>
-        Capturez vos idees partout et tout le temps.
+        Capturez vos idées partout et tout le temps.
       </Text>
       <Button 
         mode="contained" 
         onPress={onNavigateToNotes}
         style={styles.button}
         icon="note-plus"
-        contentStyle={styles.buttonContent}
       >
-        <Text>Allons-y</Text>
+        Allons-y
       </Button>
     </View>
   );
@@ -59,13 +61,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#ffffffff', // Fond bleu clair
+    backgroundColor: '#ffffff',
   },
-  image: {
-    width: 120,
-    height: 120,
+  icon: {
     marginBottom: 30,
-    // Aucun background, l'image PNG est transparente
   },
   title: {
     color: '#000000',
@@ -79,15 +78,11 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     lineHeight: 24,
     opacity: 0.8,
-    fontSize: 20,
+    fontSize: 16,
   },
   button: {
-    backgroundColor: '#8b62d3ff',
+    backgroundColor: '#8b62d3',
     borderRadius: 8,
-  },
-  buttonContent: {
-    paddingHorizontal: 20,
-    paddingVertical: 8,
   },
 });
 
